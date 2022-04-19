@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import axios from "axios";
+import { Navbar } from "react-bootstrap";
+import Map from "./components/map-display";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [redLineStops, getRedLineStops] = useState({});
+
+  useEffect(() => {
+    getAllRedLineStops();
+  }, []);
+
+  const getAllRedLineStops = () => {
+    axios
+      .get("https://api-v3.mbta.com/stops?filter[route]=Red")
+      .then((response) => {
+        const allRedLineStops = response.data.data;
+        getRedLineStops(allRedLineStops);
+      })
+      .catch();
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar>MBTA Station Outages</Navbar>
+      <Map redLineStops={redLineStops} />
     </div>
   );
 }
