@@ -18,7 +18,6 @@ const Line = (props) => {
 
   let stationAlerts = [];
 
-  let alertsCopy = alerts;
   alerts.forEach((a) => {
     const stations = a.attributes.informed_entity.filter((ie) => {
       if (ie.stop) {
@@ -47,15 +46,7 @@ const Line = (props) => {
 
   return (
     <div className="line">
-      <div className="info">
-        <h1>{props.name}</h1>
-        <Card>
-          <Card.Body>
-            <Card.Title>Route Alerts</Card.Title>
-            <ListGroup>{alertsList}</ListGroup>
-          </Card.Body>
-        </Card>
-      </div>
+      <h1 className="info">{props.name}</h1>
       <div className="stops-container">
         <div
           className="colored-line"
@@ -64,6 +55,14 @@ const Line = (props) => {
           }}
         ></div>
         {stopComponents}
+      </div>
+      <div className="info">
+        <Card>
+          <Card.Body>
+            <Card.Title>Route Alerts</Card.Title>
+            <ListGroup>{alertsList}</ListGroup>
+          </Card.Body>
+        </Card>
       </div>
     </div>
   );
