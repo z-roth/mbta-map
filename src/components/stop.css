@@ -1,0 +1,7 @@
+.stop-container {
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}

@@ -1,0 +1,17 @@
+.info {
+  margin: 1.5rem;
+}
+
+.stops-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.colored-line {
+  height: 0.4rem;
+  width: 100vw;
+  position: absolute;
+  margin-top: 1.75rem;
+  z-index: -1;
+}

@@ -1,3 +1,54 @@
-.mapboxgl-canvas {
-  height: 100vh;
+.title {
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.logo {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1rem;
+}
+
+.line-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.line-select {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.navbar {
+  display: flex;
+  padding: 1rem;
+  box-shadow: 0 2px 0 0 black;
+}
+
+.line-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
 }
