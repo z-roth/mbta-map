@@ -14,18 +14,17 @@ const App = () => {
   const [alertsLoading, setAlertsLoading] = useState(true);
   const [line, setLine] = useState("Red");
 
-  const client = axios.create({
-    baseURL: "https://api-v3.mbta.com",
-  });
-
   useEffect(() => {
     setStopsLoading(true);
     setAlertsLoading(true);
-    console.log("Re-rendering");
     getStops();
     getAlerts();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [line]);
+  
+  const client = axios.create({
+    baseURL: "https://api-v3.mbta.com",
+  });
 
   const getStops = () => {
     client({ method: "GET", url: `/stops?include=route&filter[route]=${line}` })

@@ -16,8 +16,8 @@ const Line = (props) => {
       <ListGroup.Item>No alerts to display at this time.</ListGroup.Item>
     );
 
+  // Create an array of alerts with their associated stations
   let stationAlerts = [];
-
   alerts.forEach((a) => {
     const stations = a.attributes.informed_entity.filter((ie) => {
       if (ie.stop) {
@@ -28,6 +28,7 @@ const Line = (props) => {
     stationAlerts.push({ alert: a.attributes.header, stations: stations });
   });
 
+  // Merge each alert into their associated stations
   stationAlerts.forEach((a) => {
     a.stations.forEach((station) => {
       stops.forEach((stop) => {
@@ -37,8 +38,6 @@ const Line = (props) => {
       });
     });
   });
-  console.log("station alerts", stationAlerts);
-  console.log("stops", stops);
 
   const stopComponents = stops.map((stop) => (
     <Stop key={stop.id} stop={stop} color={props.color} alerts={stop.alerts} />
