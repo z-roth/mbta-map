@@ -24,6 +24,7 @@ const App = () => {
     console.log("Re-rendering");
     getStops();
     getAlerts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [line]);
 
   const getStops = () => {
@@ -326,6 +327,12 @@ const App = () => {
     </div>
   );
 
+  const footer = (
+    <div className="footer">
+      Made by <a href="https://github.com/z-roth">Zack Roth</a>, 2022
+    </div>
+  )
+
   return stopsLoading || alertsLoading ? (
     <div className="App">
       {navbar}
@@ -340,6 +347,7 @@ const App = () => {
         alerts={alerts}
         color={`#${route.attributes.color}`}
       />
+      {footer}
     </div>
   );
 };
