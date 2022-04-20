@@ -1,16 +1,14 @@
 {
   "files": {
     "main.css": "/mbta-map/static/css/main.de964df7.css",
-    "main.js": "/mbta-map/static/js/main.38bffb8a.js",
-    "static/js/787.2b6b8626.chunk.js": "/mbta-map/static/js/787.2b6b8626.chunk.js",
+    "main.js": "/mbta-map/static/js/main.91563d77.js",
     "index.html": "/mbta-map/index.html",
     "static/media/MBTA.svg": "/mbta-map/static/media/MBTA.a15f3ac959a7d4ca30d75f1408c51539.svg",
     "main.de964df7.css.map": "/mbta-map/static/css/main.de964df7.css.map",
-    "main.38bffb8a.js.map": "/mbta-map/static/js/main.38bffb8a.js.map",
-    "787.2b6b8626.chunk.js.map": "/mbta-map/static/js/787.2b6b8626.chunk.js.map"
+    "main.91563d77.js.map": "/mbta-map/static/js/main.91563d77.js.map"
   },
   "entrypoints": [
     "static/css/main.de964df7.css",
-    "static/js/main.38bffb8a.js"
+    "static/js/main.91563d77.js"
   ]
 }
