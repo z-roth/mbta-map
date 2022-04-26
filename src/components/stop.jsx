@@ -25,7 +25,6 @@ const Stop = (props) => {
         <Card.Header
           onClick={() => {
             setOpen(!open);
-            console.log("Clicky dicky");
           }}
           aria-expanded={open}
           style={{ minWidth: "7.5rem", textAlign: "center" }}
@@ -33,7 +32,10 @@ const Stop = (props) => {
           {props.stop.attributes.name}
         </Card.Header>
         <Collapse in={open}>
-          <Card.Body style={{ minWidth: "20rem" }}><Card.Title>Alerts</Card.Title>{preparedAlerts}</Card.Body>
+          <Card.Body style={{ minWidth: "20rem" }}>
+            <Card.Title>Alerts</Card.Title>
+            {preparedAlerts}
+          </Card.Body>
         </Collapse>
       </Card>
     </div>
